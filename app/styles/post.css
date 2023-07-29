@@ -1,0 +1,12 @@
+.container-post{
+    width: min(95%, 100rem);
+    margin: 3rem auto;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.contenido{
+    white-space: pre-wrap;
+}

@@ -1,0 +1,399 @@
+:root {
+    --black: #262626;
+    --white: #FFF;
+    --fuente-principal: 'Outfit', sans-serif;
+  }
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+    background-color: black;
+    color: white;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  [class*="contenedor"], 
+  main {
+    width: min(95%, 120rem);
+    margin: 3rem auto;
+  }
+  [class*="heading"] {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    color: yellow;
+    margin: 3rem 0;
+  }
+
+  #contenido-principal{
+    padding-top: 100px;
+  }
+/* Header */
+.header{
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;  
+}
+
+
+.header .logo{
+  width: 10rem;
+  margin-bottom: 10px ;
+}
+
+.contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navegacion .link{
+  text-decoration: none;
+  color:yellow;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.4rem;
+  transition-duration: 400ms;
+  margin: 5px 0px;
+}
+
+.navegacion .link:hover{
+  color: white;
+}
+
+/* Hero */
+main{
+  width: 100%;
+  margin-top: 0px;
+}
+
+#hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+  background-image: url("../../public/img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#contenido p{
+  text-align: center;
+  margin-top: 0px;
+  font-size: 2rem;
+}
+#heading-hero{
+  text-align: center;
+  color: white;
+  font-size: 7rem;
+  margin-bottom: 0px;
+}
+
+.boton-hero{
+  align-self: center;
+  width: 80%;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+#contenido{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* Featured Items */
+#featured-items{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 20px auto;
+}
+
+#featured-items h2{
+  text-align: center;
+  font-size: 2rem;
+}
+
+#productos{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.producto{
+  width: 30%;
+}
+
+.descripcion{
+  display: none;
+}
+
+.precio-mobile{
+  display: none;
+}
+
+.imagen-producto{
+  width: 500px;
+}
+
+.boton-producto{
+  display: none;
+}
+
+.precio{
+  font-size: 1.5rem;
+  margin-top: 0px;
+}
+
+.info-producto h3{
+  font-size: 1.7rem;
+}
+
+/* Curso */
+
+#curso{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 25vh;
+  align-items: center;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#curso h2{
+  padding: 20px;
+}
+
+#descripcion-curso{
+  display: none;
+
+}
+
+
+/* About-us */
+#about-us{
+  width: 98%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#about-us p{
+  font-size: 1.5rem;
+}
+#about-us h2{
+  font-size: 2rem;
+}
+
+/* Footer */
+.footer .link{
+  text-decoration: none;
+  color:black;
+}
+
+.header .navegacion .active{
+  background-color: yellow;
+  color: black;
+}
+
+.footer{
+  background-color: yellow;
+  padding: 5rem 0;
+  margin-top: auto;
+}
+
+.footer .navegacion-footer{
+  display: none;
+}
+
+.footer .info-footer{
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo-redes{
+  height: 30px;
+  margin: 0px 10px;
+}
+
+.redes-footer{
+  margin-top: 10px;
+}
+
+.footer .contenedor{
+  display: flex;
+  justify-content: space-between;
+}
+
+.boton{
+    background-color: yellow;
+    border: none;
+    padding: 5px 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    transition: 600ms;
+}
+.boton:hover{
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.error{
+  text-align: center;
+  color: red;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navegacion .link{
+    display: inline;
+    padding: 0px 10px;
+    
+  }
+
+  .header .logo{
+    width: 10rem;
+    margin-bottom: 0px ;
+  }
+
+  .footer .navegacion-footer{
+    display: inline;
+  }
+
+  .footer .navegacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .footer .navegacion .link {
+    margin: 5px 0px;
+  }
+
+  .redes-footer img{
+    height: 40px;
+  }
+  .boton{
+    margin: auto;
+  }
+  .heading{
+    width: 100%;
+    
+  }
+
+  #hero{
+    width: 100%;
+    height: 80vh;
+  }
+
+  .boton-hero{
+    width: auto;
+  }
+  #heading-hero{
+    font-size: 15rem;
+  }
+  
+  #contenido p{
+    font-size: 3rem;
+  }
+
+  #featured-items h2{
+    font-size: 3rem;
+  }
+  #featured-items{
+    width: 80%;
+  }
+
+  #curso{
+    width: 100%;
+    height: 65vh;
+    margin: 70px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: start;
+  }
+
+  #curso h2{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+
+  #descripcion-curso{
+    display: block;
+    margin: auto;
+    width: 75%;
+  }
+
+  #boton-curso{
+    margin: auto;
+    margin-top: 20px;
+
+
+  }
+
+  #contenido-curso{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #contenedor-imagen{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #contenedor-imagen img{
+    width: 100%;
+
+  }
+
+  #about-us{
+    width: 50%;
+    margin-bottom: 70px;
+  }
+  #about-us h2{
+    font-size: 3rem;
+  }
+  #about-us p{
+    font-size: 2rem;
+  }
+  
+}
