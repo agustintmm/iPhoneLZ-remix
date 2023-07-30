@@ -24,6 +24,7 @@ export function links(){
 }
 
 function Nosotros() {
+  
   return (
     <main className="contenedor nosotros">
 

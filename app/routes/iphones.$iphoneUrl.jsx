@@ -1,4 +1,5 @@
-import { useLoaderData } from '@remix-run/react'
+import { useState } from 'react'
+import { useLoaderData, useOutletContext } from '@remix-run/react'
 import { getIphone } from '../models/iphones.server'
 import styles from '~/styles/iphone.css'
 import { Link } from '@remix-run/react'
@@ -49,9 +50,32 @@ export function meta({data}){
 
 
 function Iphone() {
+    const {agregarCarrito} = useOutletContext()
+    const [ cantidad, setCantidad ] = useState(0)
+
     const iphone = useLoaderData()
     const { name, description, imagen, price } = iphone.data[0].attributes
     const imageUrl = imagen.data.attributes.url
+
+    const handleSubmit = e => {
+      e.preventDefault()
+
+      if(cantidad < 1){
+        alert("Debes seleccionar una cantidad")
+        return 
+      }
+      
+      const productoSeleccionado = {
+        id: iphone.data[0].id,
+        image: imagen.data.attributes.url,
+        price,
+        name, 
+        cantidad
+      } 
+
+      agregarCarrito(productoSeleccionado)
+    }
+
     return (
         <main className='contenedor-dispositivo'>
             <div className='info-producto'>
@@ -61,10 +85,27 @@ function Iphone() {
             <div className='descripcion-producto'>
                 <p>{description}</p>
                 <p className='price'>${price}</p>
-                <div className='botones'>
-                    <Link className='boton'>Comprar</Link>
-                    <Link className='boton'>Agregar al carrito</Link>
-                </div>    
+                <form onSubmit={handleSubmit} className='formulario'>
+                    <label htmlFor='cantidad'>Cantidad</label>
+                    <select 
+                      name="cantidad" 
+                      id="cantidad"
+                      onChange={ e => setCantidad(parseInt(e.target.value))}
+                    
+                    >
+                      <option value="0">Seleccionar</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                    <input 
+                      className='boton'
+                      type='submit'
+                      value="Agregar al carrito"
+                    />
+                </form>    
             </div>
         </main>
     )

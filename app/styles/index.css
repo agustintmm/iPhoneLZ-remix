@@ -63,6 +63,12 @@
   justify-content: center;
 }
 
+.navegacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .navegacion .link{
   text-decoration: none;
   color:yellow;
@@ -77,6 +83,18 @@
 
 .navegacion .link:hover{
   color: white;
+}
+
+.carrito{
+  margin:auto;
+  width: 20px;
+  height: auto;
+  padding: 2px;
+  transition-duration: 700ms;
+}
+
+.carrito:hover{
+  background-color: rgb(122, 122, 70);
 }
 
 /* Hero */
@@ -212,6 +230,10 @@ main{
   color:black;
 }
 
+.footer .navegacion .carrito{
+  display: none;
+}
+
 .header .navegacion .active{
   background-color: yellow;
   color: black;
@@ -257,6 +279,7 @@ main{
     color: black;
     text-align: center;
     transition: 600ms;
+    cursor: pointer;
 }
 .boton:hover{
     color: white;
@@ -275,10 +298,27 @@ main{
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .navegacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   .navegacion .link{
     display: inline;
     padding: 0px 10px;
     
+  }
+
+  .carrito{
+    margin-left: 20px;
+    width: 30px;
+    height: auto;
+  }
+
+  .header{
+    position: sticky;
+    top: 0rem;
   }
 
   .header .logo{

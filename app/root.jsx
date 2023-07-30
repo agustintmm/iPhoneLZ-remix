@@ -1,4 +1,14 @@
-import { Meta, Links, Outlet, Scripts, LiveReload, useRouteError, isRouteErrorResponse, Link } from '@remix-run/react'
+import { useState } from 'react'
+import { 
+    Meta,
+    Links,
+    Outlet,
+    Scripts,
+    LiveReload, 
+    useRouteError, 
+    isRouteErrorResponse, 
+    Link }
+    from '@remix-run/react'
 import styles from '~/styles/index.css'
 import Header from '~/components/Header'
 import Footer from './components/Footer'
@@ -46,10 +56,55 @@ export function links(){
 }
          
 export default function App() {
+    const [carrito, setCarrito] = useState([])
+
+    // Funciones para el Outlet Context
+
+    const agregarCarrito = producto => {
+        if(carrito.some(productoState => productoState.id === producto.id)){
+            // Identificar el elemento duplicado
+            const carritoActualizado = carrito.map( productoState => {
+                if(productoState.id === producto.id){
+                    // Reescribir la cantidad
+                    productoState.cantidad = producto.cantidad
+                }
+                return productoState
+            })
+            // Actualizar el carrito
+            setCarrito(carritoActualizado)
+        }else{
+            //Registro nuevo
+            setCarrito([...carrito, producto])
+        }
+        
+    }
+
+    const actualizarCantidad = producto => {
+        const carritoActualizado = carrito.map(productoState => {
+            if(productoState.id === producto.id){
+                productoState.cantidad = producto.cantidad
+            }
+            return productoState
+        })
+        setCarrito(carritoActualizado)
+    }
+    
+    const eliminarProducto = id => {
+        const carritoActualizado = carrito.filter( productoState => productoState.id !== id)
+        setCarrito(carritoActualizado)
+    }
+
 
     return(
         <Document>
-            <Outlet />
+            <Outlet 
+                context={{
+                    agregarCarrito,
+                    carrito,
+                    actualizarCantidad,
+                    eliminarProducto
+                }}
+            />
         </Document>
     )
 
