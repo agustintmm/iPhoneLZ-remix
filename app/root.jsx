@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { 
     Meta,
     Links,
@@ -56,7 +56,12 @@ export function links(){
 }
          
 export default function App() {
-    const [carrito, setCarrito] = useState([])
+    const carritoLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('carrito')) ?? [] : null
+    const [carrito, setCarrito] = useState(carritoLS)
+
+    useEffect( () => {
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+    }, [carrito])
 
     // Funciones para el Outlet Context
 
