@@ -15,7 +15,9 @@ function Curso({curso}) {
 
             <div id="contenido-curso">
                 <h2>{title}</h2>
-                <p id="descripcion-curso">{content}</p>
+                <div className="scroll-container">
+                    <p id="descripcion-curso">{content}</p>
+                </div>
                 <Link target="blank" to={"https://www.linkedin.com/in/agustín-martinez/"} className="boton" id="boton-curso">Inscribite acá</Link>
             </div>
         </>
