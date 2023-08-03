@@ -3,7 +3,6 @@ import { Link } from "@remix-run/react"
 function Curso({curso}) {
     const {content, title, image } = curso
     const imageUrl = image.data[0].attributes.url
-    console.log(imageUrl)
     return (
         <>  
             <style jsx="true">{`
