@@ -14,13 +14,12 @@ import Header from '~/components/Header'
 import Footer from './components/Footer'
 
 export function meta(){
-    return (
-        [{
-            charset: 'utf-8',
-            title: 'iPhoneLZ - Remix',
-            viewport: "width=device-width,initial-scale=1"
-        }]
-    )
+    return [
+            { charset: "utf-8"},
+            { title: "iPhoneLZ - Remix"},
+            { content: "width=device-width, initial-scale=1" }    
+        ]
+    
 }
 
 export function links(){
