@@ -15,9 +15,9 @@ import Footer from './components/Footer'
 
 export function meta(){
     return [
-            { charset: "utf-8"},
+            { charset: "UTF-8"},
             { title: "iPhoneLZ - Remix"},
-            { content: "width=device-width, initial-scale=1" }    
+            { name:"viewport" ,content: "width=device-width, initial-scale=1.0" }    
         ]
     
 }
