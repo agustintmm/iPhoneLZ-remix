@@ -15,16 +15,11 @@ import Footer from './components/Footer'
 
 export function meta(){
     return (
-        [{
+        {
             charset: 'utf-8',
-            
-        },
-        {
-            title: 'iPhoneLZ - Remix'
-        },
-        {
+            title: 'GuitarLA - Remix',
             viewport: "width=device-width,initial-scale=1"
-        }]
+        }
     )
 }
 
