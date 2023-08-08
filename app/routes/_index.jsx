@@ -12,13 +12,14 @@ export async function loader(){
   ])
   
 
-  return {iphones: iphones.data, curso: curso.data}
+  return {iphones: iphones, curso: curso}
 }
 
 
 
 function Index() {
   const { iphones, curso } = useLoaderData()
+  console.log(iphones)
   return (
     <main>
       <section id="hero">
@@ -32,22 +33,22 @@ function Index() {
         <h2>Articulos destacados</h2>
         <div id="productos">
         <Dispositivo
-                    key={iphones[10].id}
-                    iphone={iphones[10].attributes}
+                    key={iphones[0].id}
+                    iphone={iphones[0]}
         />
         <Dispositivo
                     key={iphones[4].id}
-                    iphone={iphones[4].attributes}
+                    iphone={iphones[1]}
         />
         <Dispositivo
                     key={iphones[2].id}
-                    iphone={iphones[2].attributes}
+                    iphone={iphones[2]}
         />
         </div>
       </section>
       <section id="curso">
         <Curso
-          curso={curso.attributes}
+          curso={curso}
         />
       </section>
       <section id="about-us">

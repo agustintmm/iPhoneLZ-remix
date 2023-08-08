@@ -5,7 +5,7 @@ import Post from '../components/Post'
 
 export async function loader(){
     const posts = await getPosts()
-    return posts.data
+    return posts
 }
 
 export function meta(){

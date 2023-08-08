@@ -9,7 +9,7 @@ export async function loader({request, params}){
     const post = await getPost(postUrl)
 
     // Si no se encuentra el dispositivo, lanzamos un error
-    if(post.data.length === 0){
+    if(Object.keys(post) === 0){
         throw new Response('',{
             status: 404,
             statusText: 'Articulo no encontrado'
@@ -21,7 +21,7 @@ export async function loader({request, params}){
 
 export function meta({data}){
 
-    if (!data || !data.data || data.data.length === 0) {
+    if (Object.keys(data) === 0) {
         return [
           {
             title: "iPhoneLZ - Post no encontrado",
@@ -32,8 +32,8 @@ export function meta({data}){
 
     return (
           [{
-              title: `iPhoneLZ - ${data.data[0].attributes.title}`,
-              description: `celulares, venta de celulares, celular ${data.data[0].attributes.name}`
+              title: `iPhoneLZ - ${data.title}`,
+              description: `celulares, venta de celulares, celular ${data.title}`
           }]
       )
   }
@@ -50,15 +50,14 @@ export function meta({data}){
 
 function Post() {
     const post = useLoaderData()
-    const { content, title, imagen, publishedAt } = post.data[0].attributes
-    const imagenUrl = imagen.data.attributes.url
+    const { content, title, image, created } = post
 
     return (
         <div className="container-post">
             <h1 className="heading">{title}</h1>
             <p className="contenido">{content}</p>
-            <img src={imagenUrl} alt={`Imagen del post ${title}`}/> 
-            <p>Publicado el: {formatearFecha(publishedAt)}</p>
+            <img src={image} alt={`Imagen del post ${title}`}/> 
+            <p>Publicado el: {formatearFecha(created)}</p>
         </div>
     )
 }

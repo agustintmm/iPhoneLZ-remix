@@ -25,12 +25,9 @@ export function links(){
 
 export async function loader(){
   const iphones = await getIphones()
-
-  return iphones.data
+  console.log(iphones)
+  return iphones
 }
-
-
-
 
 function Tienda() {
     const iphones = useLoaderData()
@@ -42,7 +39,7 @@ function Tienda() {
               {iphones?.map( iphone => (
                   <Dispositivo
                     key={iphone?.id}
-                    iphone={iphone?.attributes}
+                    iphone={iphone}
                   />
               ))}
             </div>
