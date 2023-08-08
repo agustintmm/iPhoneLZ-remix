@@ -25,7 +25,6 @@ export function links(){
 
 export async function loader(){
   const iphones = await getIphones()
-  console.log(iphones)
   return iphones
 }
 
