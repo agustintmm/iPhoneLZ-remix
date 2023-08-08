@@ -19,7 +19,6 @@ export async function loader(){
 
 function Index() {
   const { iphones, curso } = useLoaderData()
-  console.log(iphones)
   return (
     <main>
       <section id="hero">

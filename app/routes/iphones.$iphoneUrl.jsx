@@ -7,7 +7,6 @@ import { Link } from '@remix-run/react'
 export async function loader({request, params}){
     const {iphoneUrl} = params
     const iphone = await getIphone(iphoneUrl)
-    console.log(iphone)
     // Si no se encuentra el dispositivo, lanzamos un error
     if(Object.keys(iphone).length === 0){
         throw new Response('',{
@@ -20,7 +19,6 @@ export async function loader({request, params}){
 }
 
 export function meta({data}){
-    console.log(data)
     if (Object.keys(data).length === 0) {
         return [
           {

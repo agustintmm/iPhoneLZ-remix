@@ -25,6 +25,3 @@ function Curso({curso}) {
 
 export default Curso
 
-// background-image: linear-gradient( to right, rgb(0 0 0 / .65), rgb(0 0 0 / .7) ), url(${imageUrl});
-
-// background-image: linear-gradient( to right, rgb(0 0 0 / .65), rbg(0 0 0 / .7) ), url(${imageUrl});
