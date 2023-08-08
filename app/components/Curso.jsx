@@ -1,13 +1,12 @@
 import { Link } from "@remix-run/react"
 
 function Curso({curso}) {
-    const {content, title, image } = curso
-    const imageUrl = image.data[0].attributes.url
+    const {content, title, image } = curso[0]
     return (
         <>  
             <style jsx="true">{`
                 #curso {
-                    background-image: linear-gradient( to right, rgb(0 0 0 / .65), rgb(0 0 0 / .7) ), url(${imageUrl});
+                    background-image: linear-gradient( to right, rgb(0 0 0 / .65), rgb(0 0 0 / .7) ), url(${image});
                     background-size: cover;
                     background-position: center;
                 }

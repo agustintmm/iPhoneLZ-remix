@@ -5,12 +5,11 @@ import styles from '~/styles/iphone.css'
 import { Link } from '@remix-run/react'
 
 export async function loader({request, params}){
-    const { iphoneUrl } = params
-
+    const {iphoneUrl} = params
     const iphone = await getIphone(iphoneUrl)
-
+    console.log(iphone)
     // Si no se encuentra el dispositivo, lanzamos un error
-    if(iphone.data.length === 0){
+    if(Object.keys(iphone).length === 0){
         throw new Response('',{
             status: 404,
             statusText: 'Articulo no encontrado'
@@ -21,8 +20,8 @@ export async function loader({request, params}){
 }
 
 export function meta({data}){
-
-    if (!data || !data.data || data.data.length === 0) {
+    console.log(data)
+    if (Object.keys(data).length === 0) {
         return [
           {
             title: "iPhoneLZ - iPhone no encontrado",
@@ -33,8 +32,8 @@ export function meta({data}){
 
     return (
           [{
-              title: `iPhoneLZ - ${data.data[0].attributes.name}`,
-              description: `celulares, venta de celulares, celular ${data.data[0].attributes.name}`
+              title: `iPhoneLZ - ${data.name}`,
+              description: `celulares, venta de celulares, celular ${data.name}`
           }]
       )
   }
@@ -54,8 +53,7 @@ function Iphone() {
     const [ cantidad, setCantidad ] = useState(0)
 
     const iphone = useLoaderData()
-    const { name, description, imagen, price } = iphone.data[0].attributes
-    const imageUrl = imagen.data.attributes.url
+    const { name, description, image, price } = iphone
 
     const handleSubmit = e => {
       e.preventDefault()
@@ -66,8 +64,8 @@ function Iphone() {
       }
       
       const productoSeleccionado = {
-        id: iphone.data[0].id,
-        image: imagen.data.attributes.url,
+        id: iphone.id,
+        image: image,
         price,
         name, 
         cantidad
@@ -80,7 +78,7 @@ function Iphone() {
         <main className='contenedor-dispositivo'>
             <div className='info-producto'>
                 <h2 className='heading'>{name}</h2>
-                <img className="imagen" src={imageUrl} alt={`Imagen del ${name}`} />
+                <img className="imagen" src={image} alt={`Imagen del ${name}`} />
             </div>
             <div className='descripcion-producto'>
                 <p>{description}</p>
