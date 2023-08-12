@@ -1,5 +1,5 @@
 # e-commerce creado desde 0, usando React Remix Run, un framework hibrido y muy bien optimizado.
-El sitio consta de 5 rutas principales: Inicio, Nosotros, Blog, Tienda y el Carrito de compras. En las primeras 4 se muestra texto e imagenes traidas desde una API, la misma fue creada con Strapi y hosteada en RENDER, donde tambien esta almacenada la base de datos PostgreeSQL a la que esta conectada Strapi y en donde se guarda la información que luego se recupera consultando la API. El sitio cuenta con routing dinamico a la hora de visitar cada producto por separado. Y un carrito de compras que se guarda en Local Storage para no perder la información tan rapidamente.
+El sitio consta de 5 rutas principales: Inicio, Nosotros, Blog, Tienda y el Carrito de compras. En las primeras 4 se muestra texto e imagenes traidas desde una API, la misma fue creada con Django REST FRAMEWORK y hosteada en RENDER, donde tambien esta almacenada la base de datos PostgreeSQL a la que esta conectado Django y en donde se guarda la información que luego se recupera consultando la API. El sitio cuenta con routing dinamico a la hora de visitar cada producto por separado. Y un carrito de compras que se guarda en Local Storage para no perder la información.
 
 --------------------------------------------------------------------------------------------------------------------------------
 
