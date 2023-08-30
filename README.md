@@ -1,58 +1,25 @@
-# e-commerce creado desde 0, usando React Remix Run, un framework hibrido y muy bien optimizado.
-El sitio consta de 5 rutas principales: Inicio, Nosotros, Blog, Tienda y el Carrito de compras. En las primeras 4 se muestra texto e imagenes traidas desde una API, la misma fue creada con Django REST FRAMEWORK y hosteada en RENDER, donde tambien esta almacenada la base de datos PostgreeSQL a la que esta conectado Django y en donde se guarda la información que luego se recupera consultando la API. El sitio cuenta con routing dinamico a la hora de visitar cada producto por separado. Y un carrito de compras que se guarda en Local Storage para no perder la información.
+<br/>
+<p align="center">
+  <h3 align="center">iPhoneLZ - ecommerce</h3>
 
---------------------------------------------------------------------------------------------------------------------------------
+  <p align="center">
+    Parte Front de un proyecto full stack creado con Django y React Remix
+    <br/>
+    <br/>
+    <a href="https://github.com/agustintmm/iPhoneLZ-remix">View Demo</a>
+    .
+  </p>
+</p>
 
-# Welcome to Remix!
 
-- [Remix Docs](https://remix.run/docs)
 
-## Development
+## About The Project
 
-From your terminal:
+![Screen Shot](https://res.cloudinary.com/dfwb0gsgo/image/upload/v1693417919/q55yqyomqy8wwgxxebb3.png)
 
-```sh
-npm run dev
-```
+Es un proyecto de un e-commerce que cuenta con carrito de compras, las imagenes y el texto que se muestra, son traidos desde una API creada en Django, el carrito de compras utiliza Local Storage para guardar la información de los productos que se van añadiendo. Se cuenta con routing dinamico a la hora de visitar cada producto por separado. El sitio web cuenta con un diseño limpio y responsive que se le dió solo utilizando CSS puro.
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Authors
 
-## Deployment
+* **Agustin Martinez** - *Estudiante de Ingeniería en Sistemas* - [Agustin Martinez](https://github.com/agustintmm) - **
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
