@@ -6,7 +6,7 @@
     Parte Front de un proyecto full stack creado con Django y React Remix
     <br/>
     <br/>
-    <a href="https://github.com/agustintmm/iPhoneLZ-remix">View Demo</a>
+    <a href="https://iphonelz-react.vercel.app" target="_blank">View Demo</a>
     .
   </p>
 </p>
