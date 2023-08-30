@@ -7,7 +7,6 @@
     <br/>
     <br/>
     <a href="https://iphonelz-react.vercel.app" target="_blank">View Demo</a>
-    .
   </p>
 </p>
 
